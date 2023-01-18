@@ -1,0 +1,20 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding:0;
+    margin:0;
+    width:100%;
+}
+.header{
+/* background-color: red;  */
+ height:75px;
+ border-bottom: 2px solid#dfdfdf;
+}
+.logocontainer>img{
+    border: 2px solid orange;
+    width:100%
+}
+.logocontainer{
+  width:125px
+}
