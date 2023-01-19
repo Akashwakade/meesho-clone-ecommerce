@@ -1,3 +1,17 @@
+ 
+import BagsFootwear from "./data/BagsandFootwear.js"
+import BeautyHealth from "./data/BeautyandHealth.js"
+import Electronics from "./data/Electronic.js"
+import HomeAndKitchen from "./data/HomeaAndKitchen.js"
+import JewelleryAccessories from "./data/JewelleryAcce.js"
+import Kids from "./data/Kids.js"
+import Men from "./data/Men.js"
+import WomenEthnic from "./data/womenEthnic.js"
+import WomenWestern from "./data/womenWestern.js"
+
+
+
+
  let inputSearchEl=document.querySelector(".inputSearch")
  let recentInput=[];
 
@@ -43,3 +57,52 @@ formInputEl.addEventListener("submit", (e) => {
 // cross.addEventListener("click",()=>{
 //     inputSearchEl.value=null
 // })
+
+
+/*function reuble*****/
+function renderSubMenu(id,data){
+    let temp = document.getElementById(id)
+function TempFunc(){
+   return data.map(el =>{
+        let list = ""; 
+        list = el.data.map(element => `<p>${element}</p>`).join(" ")    
+       return `
+        <div class="column">
+            <h4>${el.heading}</h4>
+            ${list}
+        </div>
+       `
+    }).join("")
+}
+    temp.innerHTML = TempFunc()
+}
+
+
+/****womenEthic */
+// let womenEthic=document.getElementById("womenEthic")
+// console.log(womenEthic)
+ renderSubMenu("womenEthic",WomenEthnic)
+
+// /****WomenWestern */
+ renderSubMenu("womenWestern",WomenWestern)
+
+// //Men 
+ renderSubMenu("men",Men)
+
+// /***kids */
+ renderSubMenu("kids",Kids)
+
+// /**home % kitchen */
+ renderSubMenu("HomeAndKitchen",HomeAndKitchen)
+
+// /**beauty and health */
+ renderSubMenu("beautyAndHealth",BeautyHealth)
+
+// // Jewellery & Accessories
+ renderSubMenu("JewelleryAndAccessories",JewelleryAccessories)
+
+// // Bags & Footwear
+renderSubMenu("BagsFootWarId",BagsFootwear)
+
+// // Electronics
+ renderSubMenu("ElectronicsId",Electronics)
