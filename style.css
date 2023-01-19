@@ -428,7 +428,99 @@ nav ul li:hover{
 .Register{
     margin-top: 50px;
 }
+.becomeReseller{
+   position:relative;
+}
+.becomeReseller>h3{
+   position: absolute;
+   font-size: xx-large;
+   color:cornflowerblue;
+  top:12px;
+  right:50px
+}
+.becomeReseller>h1{
+    display: flex;
+   align-items:flex-end;
+    position: absolute;
+    top:80px;
+    right:50px;
+    color:#f43397;
+    font-size:50px;
+    text-align: end;
+}
+.playStore{
+    position: absolute;
+    top:280px;
+    right:50px;
+    display: flex;
+    justify-content: space-between;
+    /* border:2px solid red; */
+    width:320px;
+    height:55px
+}
+.playStore>a>img{
+    height: 100%;
+}
+.frightimg{
+   /* border:2px solid red; */
+   width:30px
+   
+}
+.Register{
+    position:relative;
+    /* border:2px solid red; */
+}
+.Register>h3{
+    position: absolute;
+    top:20px;
+    left:50px;
+    font-size: x-large;
+    color:white
+}
+.Register>p{
+    position: absolute;
+    color:white;
+    top:80px;
+    left:50px
+}
+.trightImg{
+    width:80%;
+    display: flex;
+    position:absolute;
+    top:150px;
+    left:50px;
+    justify-content: space-between;
+    /* border:2px solid white */
+}
+.trightImg>div{
+    width:250px;
+    display: flex;
+    color:white;
+    padding-right: 30px;;
+   border-right:2px solid white;
+    justify-content: space-between;
+}
+.trightImg>div:nth-child(3){
+    border:none
+}
+.regSign{
+    display: flex;
+    position: absolute;
+    /* border:2px solid red; */
+    bottom:10px;
+    left:50px;
+    background-color: antiquewhite;
+    color:#f43397;
+    width:170px;
+    height:70px;
+    padding-left: 40px;
+    padding-bottom: 20px;
+    text-align: left;
+    align-items: center;
+    padding-top: 20px;
+    border-radius: 5px;
 
+}
 
 
    
