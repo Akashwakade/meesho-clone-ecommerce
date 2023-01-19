@@ -1,19 +1,35 @@
 *{
     box-sizing: border-box;
 }
+:root{
+    --hoverTextColor : #f43397;
+}
 body{
     padding:0;
     margin:0;
     width:100%;
     font-family:"Roboto", sans-serif;
+    color:rgb(67, 66, 66);
+}
+.Main{
+   /* /* margin-top: 0%; */
+    /* position:relative;  */
+    position:sticky;
+
+    /* border:2px solid red; */
 }
 .header{
 /* background-color: red;  */
+/* position: fixed; */
  height:75px;
  border-bottom: 1px solid#dfdfdf;
  display: flex;
  align-items: center;
  justify-content: space-between;
+ background-color: white;
+ margin:0px auto;
+
+ 
 
 
 }
@@ -108,5 +124,311 @@ form{
 .downloadContainer{
     display: flex;
     align-items: center;
+    padding-right: 5px;
+    position: relative
+
 }
+.downloadContainer p{
+    margin:0;
+    padding:0;
+    font-size: 17px;
+    margin-right: 30px;
+}
+.profileAndCart{
+    display: flex;
+    align-items: center;
+    /* border:2px solid red; */
+     justify-content: space-around;
+    width:150px;
+    margin-left: 30px; 
+}
+.profileIcon,.cartIcon{
+   width:20px;
+   
+
+
+}
+ .cartIcon{
+    padding-bottom: 0px;
+    /* border:2px solid red; */
+    margin-bottom: 0px;
+    /* width:50% */
+} 
+
+.profileAndCart p{
+    margin: 0;
+    padding: 0;
+   
+}
+.profileContainer,.cartContainer{
+    padding: 0px, 20px;
+    display: flex;
+    justify-content: center;
+    align-items:center ;
+    flex-direction: column;
+
+}
+.becomeSupplierContainer{
+    padding:0px 30px;
+    border-left: 1.5px solid #ccc;
+    border-right: 1.5px solid #ccc;
+    font-size: 18px;
+}
+.headerRight{
+    margin-right: 100px;
+    
+}
+.downloadContainer:hover{
+    color:var(--hoverTextColor);
+    /* cursor:pointer; */
+    /* width:200px; */
+    /* display: flex;
+    align-items: center; */
+}
+.profileContainer:hover{
+    color:var(--hoverTextColor)
+}
+ .downloadHoverBtnContainer{
+   
+   position: absolute;
+   bottom:0;
+   top:40px;
+   padding:10px;
+   width:175px;
+   height:200px;
+   display: none;
+   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+} 
+/* .signUpContainer{
+    border:2px solid red;
+    margin-top: 500px;
+    display: none;
+}
+.myOrder{
+    display: flex;
+    width:50px
+} */
+
+
+.downloadContainer:hover .downloadHoverBtnContainer,
+.downloadContainer:focus .downloadHoverBtnContainer{
+ display: block;
+ z-index: 1;
+ color:black;
+ background-color: white;
+}
+ .downloadBtn{
+    display: block;
+    
+    width:150px;
+    position: relative;
+    /* top: 100px; */
+    margin-top: 15px;
+     /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */ 
+} 
+
+/**navigation css ***/
+nav{
+    /* position: fixed; */
+    width: 90%;
+    border-bottom: 1px solid #ccc;
+    height: 54px;
+    margin: auto;
+    /* padding:20px */
+    
+}
+nav ul{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+    height: 100%;
+    margin: 0; 
+    position: relative;
+}
+nav ul li{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    /* background-color: red; */
+    border-bottom: 2px solid transparent;
+    /* cursor: pointer;  */
+    /* position: absolute; */
+    
+}
+nav ul li:hover{
+    color:var(--hoverTextColor);
+    border-bottom: 4px solid var(--hoverTextColor);
+}
+
+
+/**module box submenu***/
+.subMenu{
+    position: absolute;
+    /* height: 400px; */
+    /* width:99%; */
+    top:51px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    display: none;
+     box-sizing: border-box;
+   /* background-color: red; */
+     margin: 0px 10px; 
+     box-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    padding: 20px; 
+}
+
+ nav ul li:hover .subMenu{
+    display: block;
+}
+
+.subMenu p{
+    color:var(--textColor)
+
+}
+.submenuList{
+    display: flex;
+
+}
+.column{
+    margin-right: 40px;
+} 
+
+/**********************lowest price*************************/
+.lowestpriceContainer{
+    display: flex;
+    margin:50px auto;
+    max-width: 1100px;
+    /* background-color: red; */
+}
+.lowestpriceContainer h1{
+    font-size: 40px;
+    margin: 0;
+    color:rgb(36, 31, 31);
+}
+.lowestPrice_text{
+    width: 50%;
+    padding: 25px 0 0 25px;
+}
+.lowestPrice_image{
+    width: 50%;
+}
+.lowestPrice_icon{
+    width: 30px;
+    border-radius: 40px;
+    background-color: rgb(238, 133, 187);   
+}
+.lowestPriceWhay{
+    display: flex;
+    height: 50px;
+    margin: 20px 0;
+}
+.lowestPriceItem{
+    padding:  0 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-right: 2px solid #ccc;
+}
+.lowestPriceItem p{
+    padding-left: 10px;
+}
+.downloadApp_contianer{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    height: 50px;
+    background-color: var(--hoverTextColor);
+    border:none;
+    outline: none;
+    padding: 0 10px;
+    border-radius: 5px;
+    color:white;
+}
+.downloadApp_contianer p{
+    padding: 0px 20px;
+}
+
+/*topCategoriesFrom*/
+.topCategoriesFrom{
+    width: 1100px;
+    margin: auto;
+}
+.topCategoriesHeading{
+    display: flex;
+    align-items: center;
+    
+}
+.horizontalLine{
+    padding: 1px;
+    background-color: var(--hoverTextColor);
+    width:50%;
+}
+.topCategoriesHeading h1{   
+    width: max-content;
+    width: 1050px;
+    color:rgb(8, 8, 8);
+    font-size: 38px;
+    margin: 0;
+}
+.topCategoreisImage{
+    width: 100%;
+    height: 500px;
+    background-image: url("https://images.meesho.com/images/marketing/1649759774600.jpg");
+    background-repeat: no-repeat;
+    margin-top: 50px;
+    display: flex;
+    align-items: flex-end;
+}
+.topCategoreisImage img{
+    max-width: 300px;
+    margin: 10px;
+    bottom: 0;
+}
+.topCategoreisImage img:first-child{
+    max-width: 400px;
+}
+
+/****/
+.essentialContaienr{
+    width: 100%;
+    height: 500px;
+    background-color: 400px;
+    margin-top: 50px;
+    background-image: url("https://images.meesho.com/images/marketing/1664343269674.jpg");
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.essentialContaienr img{
+    max-width: 180px;
+}
+
+
+.essential_item{
+    max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.essen-btn{
+    margin-left: 100px;
+    margin-top: 20px    ;
+}
+.becomeReseller{
+    margin-top: 50px;
+}
+.Register{
+    margin-top: 50px;
+}
+
+
+
    
