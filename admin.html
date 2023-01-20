@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin</title>
+    <style>
+         form{
+            width: 300px;
+            margin: auto;
+            margin-top: 150px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            padding: 40px;
+            border-radius: 10px;
+        }
+        input{
+            margin: 5px 0px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome Admin!</h1>
+    <form>
+        <input type="text" placeholder="Name" required id="name">
+        <br>
+        <input type="text" placeholder="Description" required id="desc">
+        <br>
+        <input type="number" placeholder="price" required id="price">
+        <br>
+        <input type="url" required placeholder="url of the image" id="url">
+        <br>
+        <input type="submit">
+    </form>
+</body>
+</html>
+<!-- the main objective of this page is to add new products to our database
+our products will have name, des,price, url -->
+
+<script>
+    // 1. catch the form
+    let form = document.querySelector('form');
+
+    // 2. we get the old data
+    // as we are using array to store the objects, we use json.parse
+
+    let productDB = JSON.parse(localStorage.getItem('productDB'))||[];
+
+    // 3. we add event to the form to store the data.
+
+    form.addEventListener('submit',function(event){
+        // we prevent default
+        event.preventDefault();
+        //4. we create temp obj to store form data
+        let formData = {
+            name: form.name.value,
+            desc: form.desc.value,
+            price: form.price.value,
+            url: form.url.value
+        }
+        //5. we push this obj into our array
+        productDB.push(formData);
+        // 6. we store the data in local storage.
+        // we are trying to store array and object so we need to use stringify
+        localStorage.setItem('productDB',JSON.stringify(productDB));
+
+        alert('product added to DB!');
+    })
+</script>
