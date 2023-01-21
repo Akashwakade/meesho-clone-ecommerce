@@ -53,6 +53,7 @@
     <div class="products">
         <!-- we append all the products inside this div -->
     </div>
+    <p>total price is <span><h3></h3></span></p>
 </body>
 </html>
 <script>
@@ -63,6 +64,7 @@
     cartDB.forEach(function(el){
         console.log(el[0].price);
     })
+    console.log(cartDB.length)
     
     // we display the data
     displayData(cartDB);
@@ -73,6 +75,16 @@
     function displayData(data){
         // catch the parent element
         let parent = document.querySelector('.products');
+        let total=0;
+        data.forEach((el,i)=>{
+             console.log(el[0])
+           total=Number(total+ Number(el[0].price));
+        
+
+        });
+        let span=document.querySelector("h3")
+        span.textContent=total
+        console.log(total)
 
         // we are just following the process, we null it.
         // we generally use null when dealing with form and DOM problems & splice method 
@@ -91,7 +103,8 @@
             let qty = document.createElement('span');
             let del = document.createElement('button');
             let quant=document.createElement('p');
-            quant.textContent="Qty: "+el[1]
+            quant.textContent=(el[1])
+          
             
           let boxshadow=document.querySelector(".products")
            boxshadow.style.display="box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px"
@@ -110,7 +123,9 @@
                 // we modify the data
                 el[1]++;
                 // we modify the dom
+                quant.textContent++;
                 qty.textContent++;
+                el[0].price+=el[0].price
                 // we store the data again
                 localStorage.setItem('cartProducts',JSON.stringify(data));
             })
@@ -119,6 +134,7 @@
                 if(el[1]>1){
                     el[1]--;
                     qty.textContent--;
+                    quant.textContent--;
                     localStorage.setItem('cartProducts',JSON.stringify(data));
                 }
                 else{

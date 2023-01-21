@@ -26,13 +26,13 @@ create link and paste it -->
     /* justify-content: flex-end; */
     grid-template-columns: repeat(4,1fr);
     gap: 13px;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
     padding: 10px;
     width:80%;
     
     justify-content: space-between;
     margin:auto;
-    border:2px solid red
+    /* border:2px solid red */
 }
 .products>div>img{
     width:200px
@@ -108,7 +108,8 @@ create link and paste it -->
                 <div class="profileIcon">
                     <img src="./images/user.png" alt="">
                 </div>
-                <p class="profileHover">Profile</p>
+                <div class="profileHover"><p>Profile</p></div>
+               
             </div>
                
              
@@ -315,8 +316,8 @@ create link and paste it -->
     <!-- product part -->
     <h1 style="margin-left: 50px; margin-top: 50px;">Products For You</h1>
     <div class="productnav">
-        <button>Cart</button>
-        <button>Log Out</button>
+        <!-- <button>Cart</button>
+        <button>Log Out</button> -->
     </div>
     <div class="products">
         <!-- we append all the products inside this div -->
@@ -358,7 +359,7 @@ create link and paste it -->
             // we give values
             name.textContent = el.name;
             img.src = el.url;
-            price.textContent = el.price;
+            price.textContent ="₹ "+el.price;
             desc.textContent = el.desc;
             cartBtn.textContent = 'Add to Cart'
 
