@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cart</title>
+    <style>
+         .nav{
+            display: flex;
+            /* margin-left: 70px; */
+
+            /* gap: 10px; */
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 0px 50px; 
+        }
+        .logocontainer>img{
+            width:100%;
+
+        }
+        .logocontainer{
+            width:18%
+        }
+
+        .products{
+    display: grid;
+    /* justify-content: flex-end; */
+    grid-template-columns: repeat(4,1fr);
+    gap: 13px;
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
+    padding: 10px;
+    width:80%;
+    
+    justify-content: space-between;
+    margin:auto;
+    /* border:2px solid red */
+}
+.products>div>img{
+    width:200px
+}
+.products>div{
+    /* width:70%; */
+    /* height:30%; */
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="logocontainer">
+            <img src="./images/meesho.png" />
+        </div>
+        <!-- <button>Home</button>
+        <button>Log Out</button> -->
+    </div>
+    <div class="products">
+        <!-- we append all the products inside this div -->
+    </div>
+</body>
+</html>
+<script>
+    // write logic here
+    // we get the product data from local storage
+    let cartDB = JSON.parse(localStorage.getItem('cartProducts'))||[];
+
+    cartDB.forEach(function(el){
+        console.log(el[0].price);
+    })
+    
+    // we display the data
+    displayData(cartDB);
+
+
+    // we write a function to display the data or update the DOM
+
+    function displayData(data){
+        // catch the parent element
+        let parent = document.querySelector('.products');
+
+        // we are just following the process, we null it.
+        // we generally use null when dealing with form and DOM problems & splice method 
+        parent.innerHTML = null;
+
+        // we run forEach loop inside the array.
+        data.forEach(function(el,i){
+            // we create a card(div) first
+            let card = document.createElement('div');
+            let name = document.createElement('h3');
+            let img = document.createElement('img');
+            let price = document.createElement('p');
+            let desc = document.createElement('p');
+            let addBtn = document.createElement('button');
+            let minBtn = document.createElement('button');
+            let qty = document.createElement('span');
+            let del = document.createElement('button');
+            let quant=document.createElement('p');
+            quant.textContent="Qty: "+el[1]
+            
+          let boxshadow=document.querySelector(".products")
+           boxshadow.style.display="box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px"
+    
+            // we give values
+            name.textContent = el[0].name;
+            img.src = el[0].url;
+            price.textContent = el[0].price;
+            desc.textContent = el[0].desc;
+            addBtn.textContent = '+';
+            minBtn.textContent = '-'
+            qty.textContent = el[1];
+            del.textContent = 'Delete'
+
+            addBtn.addEventListener('click',function(){
+                // we modify the data
+                el[1]++;
+                // we modify the dom
+                qty.textContent++;
+                // we store the data again
+                localStorage.setItem('cartProducts',JSON.stringify(data));
+            })
+
+            minBtn.addEventListener('click',function(){
+                if(el[1]>1){
+                    el[1]--;
+                    qty.textContent--;
+                    localStorage.setItem('cartProducts',JSON.stringify(data));
+                }
+                else{
+                    // we modify the array
+                    data.splice(i,1);
+                    // we store it again
+                    localStorage.setItem('cartProducts',JSON.stringify(data));
+                    // we update DOM by calling the function
+                    displayData(data);
+                }
+            })
+            // add function to the delete button
+
+
+            
+            // we append
+            card.append(img,name,quant,desc,price,addBtn,qty,minBtn);
+            parent.append(card);
+            // console.log(img)
+        })
+    }
+</script>

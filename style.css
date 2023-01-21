@@ -4,6 +4,7 @@
 :root{
     --hoverTextColor : #f43397;
 }
+
 body{
     padding:0;
     margin:0;
@@ -15,12 +16,14 @@ body{
    /* /* margin-top: 0%; */
     /* position:relative;  */
     position:sticky;
+    top:0px;
+    z-index: 2;
 
     /* border:2px solid red; */
 }
 .header{
 /* background-color: red;  */
-/* position: fixed; */
+
  height:75px;
  border-bottom: 1px solid#dfdfdf;
  display: flex;
@@ -38,6 +41,7 @@ body{
 .headerRight{
     display: flex;
     align-items: center;
+    position: relative;
 }
 img{
     width:100%;
@@ -121,6 +125,49 @@ form{
     margin:5px
 
 }
+.signUpContainer{
+    top:70px;
+    /* left:1000px; */
+    right:70px;
+    /* border:2px solid red; */
+    /* display: none; */
+     /* margin-top: 500px; */
+    width:200px;
+    /* height: 10px; */
+    position: absolute;
+    padding-left: 8px;
+    background-color:white;
+    z-index: 1;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+
+    
+}
+/* .profileHover:hover .signUpContainer{
+    display:grid;
+    
+} */
+
+.myOrder>img{
+    width:20px;
+    height:20px
+}
+.myOrder{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.signUpContainer>a>button{
+    /* border:2px solid red; */
+    width:180px;
+    height: 50px;
+    font-size:medium;
+    background-color: #f43397;
+    color:white;
+    border-color: white;
+    
+    /* padding:10px */
+}
 .downloadContainer{
     display: flex;
     align-items: center;
@@ -185,8 +232,12 @@ form{
     /* display: flex;
     align-items: center; */
 }
-.profileContainer:hover{
+.profileContainer:hover {
     color:var(--hoverTextColor)
+    
+}
+.profileHover:hover.signUpContainer{
+    display: block;
 }
  .downloadHoverBtnContainer{
    
@@ -229,13 +280,14 @@ form{
 } 
 
 /**navigation css ***/
-nav{
+nav{background-color: white;
     /* position: fixed; */
     width: 90%;
     border-bottom: 1px solid #ccc;
     height: 54px;
     margin: auto;
     /* padding:20px */
+    /* position: relative; */
     
 }
 nav ul{

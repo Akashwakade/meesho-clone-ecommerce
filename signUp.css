@@ -1,0 +1,51 @@
+body{
+    background-color:#fdebee
+}
+.mimage>img{
+    width:100%;
+}
+.header{
+     position:sticky;
+     top:0px;
+     margin: 0px; 
+     padding: 0px;
+}
+.mainPage{
+
+    border:2px solid black;
+    /* margin-top: 10px; */
+    width:500px;
+    height: 100vh;
+    margin: 50px auto;
+    background-color: white;
+    text-align: center;
+    border-color: white;
+    border-radius: 30px ;
+  
+}
+.countryPhoneContainer{
+    display: flex;
+    justify-content: space-between;
+    /* border:2px solid red; */
+    width:300px;
+    align-items: center;
+    margin: auto;
+   
+}
+.SendOtp>button{
+    width:250px;
+    /* border:2px solid red; */
+    background-color: #cf489a;
+    color:white;
+    border-color: white;
+    height:50px;
+}
+.phoneN{
+    margin-bottom: 14px;
+    /* border:2px solid red;  */
+}
+.otp{
+    color:#cf489a;
+    display: none;
+}
+

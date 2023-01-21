@@ -106,3 +106,9 @@ renderSubMenu("BagsFootWarId",BagsFootwear)
 
 // // Electronics
  renderSubMenu("ElectronicsId",Electronics)
+
+ //signup button
+ let signUp=document.querySelector("#signUp");
+ signUp.addEventListener("click",()=>{
+    console.log('hello')
+ })
