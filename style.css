@@ -90,11 +90,11 @@ img{
 }
 .searchRecent{
     position:absolute;
-    /* background-color: red; */
+    background-color: white;
     bottom:0;
     left:0;
     top:45px;
-
+    
 
     width:100%;
     height:350px;
@@ -110,6 +110,7 @@ form{
 }
 .searchInputContainer:focus-within .searchRecent{
     display: block;
+    z-index: 2;
 }
 .recentIcon{
     width:20px;
@@ -130,7 +131,7 @@ form{
     /* left:1000px; */
     right:70px;
     /* border:2px solid red; */
-    /* display: none; */
+    display: none;
      /* margin-top: 500px; */
     width:200px;
     /* height: 10px; */
@@ -142,10 +143,13 @@ form{
 
     
 }
-/* .profileHover:hover .signUpContainer{
-    display:grid;
-    
+/* .profileHover p:hover.signUpContainer,
+.profileHover p:focus.signUpContainer{
+    display: block;
 } */
+
+
+
 
 .myOrder>img{
     width:20px;
@@ -233,7 +237,8 @@ form{
     align-items: center; */
 }
 .profileContainer:hover {
-    color:var(--hoverTextColor)
+    color:var(--hoverTextColor);
+    
     
 }
 .profileHover:hover.signUpContainer{

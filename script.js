@@ -9,10 +9,20 @@ import Men from "./data/Men.js"
 import WomenEthnic from "./data/womenEthnic.js"
 import WomenWestern from "./data/womenWestern.js"
 
+let profileIcon=document.querySelector(".profileHover")
+profileIcon.addEventListener('click',()=>{
+    let signUpcont=document.querySelector(".signUpContainer");
+    signUpcont.style.display='block'
+}
+)
+let closex=document.querySelector("#closeX");
 
-
-
+// cross function event
  let inputSearchEl=document.querySelector(".inputSearch")
+ closex.addEventListener("click",()=>{
+    inputSearchEl.value=null;
+ })
+
  let recentInput=[];
 
  let formInputEl=document.getElementById("inputForm");
