@@ -6,7 +6,8 @@
          .nav{
             display: flex;
             /* margin-left: 70px; */
-
+           justify-content: space-between;
+           align-items: center;
             /* gap: 10px; */
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             padding: 0px 50px; 
@@ -47,24 +48,19 @@
         <div class="logocontainer">
             <img src="./images/meesho.png" />
         </div>
-        <!-- <button>Home</button>
-        <button>Log Out</button> -->
+         <a href="./index copy.html">Home</a>  
+        <a href="./index.html">Log Out</a> 
     </div>
     <div class="products">
         <!-- we append all the products inside this div -->
     </div>
-    <p>total price is <span><h3></h3></span></p>
+    <p><span><h3></h3></span></p>
 </body>
 </html>
 <script>
     // write logic here
     // we get the product data from local storage
     let cartDB = JSON.parse(localStorage.getItem('cartProducts'))||[];
-
-    cartDB.forEach(function(el){
-        console.log(el[0].price);
-    })
-    console.log(cartDB.length)
     
     // we display the data
     displayData(cartDB);
@@ -75,16 +71,18 @@
     function displayData(data){
         // catch the parent element
         let parent = document.querySelector('.products');
-        let total=0;
-        data.forEach((el,i)=>{
-             console.log(el[0])
-           total=Number(total+ Number(el[0].price));
         
-
-        });
-        let span=document.querySelector("h3")
-        span.textContent=total
+        let total=0;
+    cartDB.forEach(function(el){
+        total+=Number(el[0].price);
         console.log(total)
+        
+    })
+    console.log(cartDB.length)
+    
+        // let span=document.querySelector("h3")
+        // span.textContent=total
+        // console.log(total)
 
         // we are just following the process, we null it.
         // we generally use null when dealing with form and DOM problems & splice method 
@@ -123,9 +121,11 @@
                 // we modify the data
                 el[1]++;
                 // we modify the dom
+                price.textContent=el[0].price*
                 quant.textContent++;
                 qty.textContent++;
-                el[0].price+=el[0].price
+                price.textContent=(Number(el[0].price)*Number(qty.textContent))
+                
                 // we store the data again
                 localStorage.setItem('cartProducts',JSON.stringify(data));
             })
@@ -135,6 +135,7 @@
                     el[1]--;
                     qty.textContent--;
                     quant.textContent--;
+                    price.textContent=price.textContent-Number(el[0].price)
                     localStorage.setItem('cartProducts',JSON.stringify(data));
                 }
                 else{
