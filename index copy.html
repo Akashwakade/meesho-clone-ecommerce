@@ -43,9 +43,6 @@ create link and paste it -->
     text-align:center;
     box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
 }
-/* #search{
-    border: none;
-} */
 </style>
 </head>
 
@@ -66,26 +63,13 @@ create link and paste it -->
                 <!-- i want to add cross for this i link font awesome -->
                 <form action="" id="inputForm">
                 <input 
-                 type="text" placeholder="Try Saree, Kurti or Search by Product Code" id="search"/>
-                <input type="submit" value="search" style="display: none;"></form>
+                 type="text" placeholder="Try Saree, Kurti or Search by Product Code" class="inputSearch"/></form>
                 <div class="close">
                     <i  class="fa-solid fa-xmark" id="closeX"></i>
                 </div>
                 <div class="searchRecent">
-                    <p style="color: #333333;">Recent Searches </p>
-                    <p>
-                        Popular Searches </p>
-                    <div class="popular">
-                        <p>saree</p>
-                        <p>shoes</p>
-                        <p>smartwatch</p>
-                        <p>kurti</p>
-                        <p>watch</p>
-                        <p>tshirt</p>
-                        <p>top for woman</p>
-                        <p>lehenga</p>
-                        <p>jacket</p>
-                    </div>
+                    <p> Recent Searches</p>
+                    
                     </div>
                 </div>
     
@@ -148,8 +132,9 @@ create link and paste it -->
        <!-- sign up button -->
        <div class="signUpContainer">
         <h2>Hello User</h2>
-        <p>To access your Meesho account</p>
-        <a href="./signUp.html"><button id="signUp">Sign Up</button></a>
+
+        <p>mob.no</p>
+        <a href="./index.html"><button id="signUp">Logout</button></a>
         <div class="myOrder">
             <img src="https://th.bing.com/th/id/R.074d3efef8d6978629e7bb0ea2df5af8?rik=gRprKLoj2gFqmA&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_130856.png&ehk=HKoa6DkQ0C%2fQWoQLPLWvLhuJThxJ0D2QcuOC4gOMpY0%3d&risl=&pid=ImgRaw&r=0" alt="">
             <p>My Orders</p>
@@ -347,32 +332,10 @@ create link and paste it -->
 <script>
       // write logic here
     // we get the product data from local storage
-    let productDB = JSON.parse(localStorage.getItem('productDB'))||[];
-    let searchForm=document.querySelector("#inputForm")
-
-   
+    let productDB = JSON.parse(localStorage.getItem('productDB'));
     
     // we display the data
     displayData(productDB);
-    searchForm.addEventListener("submit", (e) => {
-     e.preventDefault();
-    
-    let searchParams = searchForm.search.value;
-    // alert(searchParams)
-        // console.log(productDB) 
-    let filtered = productDB.filter((element) => {
-    //   console.log(element)
-      if (
-        element.name.toUpperCase().includes(searchParams.toUpperCase()) ===
-        true
-      ) {
-        return true;
-      } else {
-        return false;
-      }
-    });
-     displayData(filtered);
-  });
 
 
     // we write a function to display the data or update the DOM
@@ -381,10 +344,9 @@ create link and paste it -->
         // catch the parent element
         let parent = document.querySelector('.products');
 
-
         // we are just following the process, we null it.
         // we generally use null when dealing with form and DOM problems 
-         parent.innerHTML = null;
+        // parent.innerHTML = null;
 
         // we run forEach loop inside the array.
         data.forEach(function(el){
@@ -392,7 +354,7 @@ create link and paste it -->
             let card = document.createElement('div');
             let name = document.createElement('h3');
             let img = document.createElement('img');
-            let price = document.createElement('h2');
+            let price = document.createElement('p');
             let desc = document.createElement('p');
             let cartBtn = document.createElement('button');
 
@@ -400,7 +362,6 @@ create link and paste it -->
             name.textContent = el.name;
             img.src = el.url;
             price.textContent ="₹ "+el.price;
-
             desc.textContent = el.desc;
             cartBtn.textContent = 'Add to Cart'
 

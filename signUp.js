@@ -20,17 +20,20 @@ otpButton.addEventListener("click",function(){
         let enterOtp=document.querySelector("#inputPass").value;
         if(enterOtp=="1234"){
            alert('login successfull');
+           window.location.assign('./admin.html')
 
-           var mydiv = document.querySelector(".mainPage");
-           var aTag = document.createElement('a');
-           aTag.setAttribute('href',"admin.html");
-           aTag.innerText = "Click here to go to the Admin page";
-           mydiv.appendChild(aTag);
+         //   var mydiv = document.querySelector(".mainPage");
+         //   var aTag = document.createElement('a');
+         //   aTag.setAttribute('href',"admin.html");
+         //   aTag.innerText = "Click here to go to the Admin page";
+         //   mydiv.appendChild(aTag);
+
 
            
         }
         else{
-            alert('wrong otp')
+            alert('login successfull');
+            window.location.assign('./index copy.html')
         }
         })
         

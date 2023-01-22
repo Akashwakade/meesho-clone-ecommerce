@@ -79,7 +79,7 @@ img{
     position:relative;
     
 }
-.inputSearch{
+#search{
     width:100%;
     border:none;
     outline:none;
@@ -147,8 +147,22 @@ form{
 .profileHover p:focus.signUpContainer{
     display: block;
 } */
-
-
+.popular{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:5px;
+    /* border:2px solid red; */
+    text-align: center;
+    /* align-items: center; */
+}
+.popular>p{
+    /* border:2px solid red; */
+    align-items: center;
+    border-radius:  30px;
+    padding:8px;
+    background-color:#f9f9f9
+   
+}
 
 
 .myOrder>img{
