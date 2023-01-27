@@ -15,6 +15,13 @@ profileIcon.addEventListener('click',()=>{
     signUpcont.style.display='block'
 }
 )
+// let profileIcon=document.querySelector(".profileHover")
+document.body.addEventListener('click',function(){
+    let signUpcont=document.querySelector(".signUpContainer");
+    // signUpcont.style.zIndex='-1'
+})
+   
+
 let closex=document.querySelector("#closeX");
 
 // cross function event

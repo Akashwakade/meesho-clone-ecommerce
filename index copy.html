@@ -134,7 +134,7 @@ create link and paste it -->
         <h2>Hello User</h2>
 
         <p>mob.no</p>
-        <a href="./index.html"><button id="signUp">Logout</button></a>
+        <a href="index.html"><button id="logout">Logout</button></a>
         <div class="myOrder">
             <img src="https://th.bing.com/th/id/R.074d3efef8d6978629e7bb0ea2df5af8?rik=gRprKLoj2gFqmA&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_130856.png&ehk=HKoa6DkQ0C%2fQWoQLPLWvLhuJThxJ0D2QcuOC4gOMpY0%3d&risl=&pid=ImgRaw&r=0" alt="">
             <p>My Orders</p>
@@ -329,7 +329,14 @@ create link and paste it -->
 
 </html>
 <script src="./script.js" type="module"></script>
+
 <script>
+    let logout=document.querySelector("#logout")
+    logout.addEventListener("click",function(){
+        alert('log out successfull')
+         
+        // window.location.assign('./index.html')
+    })
       // write logic here
     // we get the product data from local storage
     let productDB = JSON.parse(localStorage.getItem('productDB'));

@@ -358,6 +358,9 @@ nav ul li:hover{
  nav ul li:hover .subMenu{
     display: block;
 }
+nav:hover .signUpContainer{
+display:none;
+}
 
 .subMenu p{
     color:var(--textColor)
