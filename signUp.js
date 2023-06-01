@@ -33,7 +33,7 @@ otpButton.addEventListener("click",function(){
         }
         else{
             alert('login successfull');
-            window.location.assign('./index copy.html')
+            window.location.assign('./index.copy.html')
         }
         })
         
